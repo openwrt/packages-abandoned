@@ -30,7 +30,7 @@ define Package/python-django-constance/Default
 endef
 
 define Package/python2-django-constance
-$(call Package/python2-django-constance/Default)
+$(call Package/python-django-constance/Default)
   DEPENDS:= \
 	+PACKAGE_python2-django-constance:python2 \
 	python2-django1

@@ -21,7 +21,6 @@ PKG_LICENSE_FILES:=LICENSE
 include ../pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include ../python2-package.mk
-include ../python3-package.mk
 
 define Package/ruamel-yaml/Default
   SECTION:=lang

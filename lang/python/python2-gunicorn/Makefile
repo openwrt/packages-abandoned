@@ -40,14 +40,14 @@ define Package/python2-gunicorn/description
     WSGI HTTP Server for UNIX (libraries)
 endef
 
-define PyPackage/python2-gunicorn/filespec
-+|$(PYTHON_PKG_DIR)
--|$(PYTHON_PKG_DIR)/gunicorn/workers/_gaiohttp.py
+define Py2Package/python2-gunicorn/filespec
++|$(PYTHON2_PKG_DIR)
+-|$(PYTHON2_PKG_DIR)/gunicorn/workers/_gaiohttp.py
 endef
 
 # Make sure that the binaries are not installed with the libraries
-# That means adding some empty PyPackage/gunicorn/install rules
-define PyPackage/python2-gunicorn/install
+# That means adding some empty Py2Package/gunicorn/install rules
+define Py2Package/python2-gunicorn/install
 	:
 endef
 

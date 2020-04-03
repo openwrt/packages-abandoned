@@ -46,7 +46,7 @@ define Build/Compile
 	install --prefix="$(PKG_INSTALL_DIR)/usr")
 endef
 
-define PyPackage/python2-ldap/install
+define Py2Package/python2-ldap/install
 	$(INSTALL_DIR) $(1)$(PYTHON2_PKG_DIR)
 	$(CP) \
 	    $(PKG_INSTALL_DIR)$(PYTHON2_PKG_DIR)/* \

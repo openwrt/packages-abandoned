@@ -1,0 +1,33 @@
+From 796bd4b1417f8799418f0109f9fec5a9755a5681 Mon Sep 17 00:00:00 2001
+From: Tom Stellard <tstellar@redhat.com>
+Date: Tue, 11 Aug 2020 07:55:18 -0700
+Subject: [PATCH] libcxx: Remove monorepo requirement
+
+---
+ libcxx/CMakeLists.txt | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/libcxx/CMakeLists.txt b/libcxx/CMakeLists.txt
+index f37d729a8a1..a6ea8e09d8c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,10 +1,3 @@
+-# See https://libcxx.llvm.org/docs/BuildingLibcxx.html for instructions on how
+-# to build libcxx with CMake.
+-
+-if (NOT IS_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/../libcxxabi")
+-  message(FATAL_ERROR "libc++ now requires being built in a monorepo layout with libcxxabi available")
+-endif()
+-
+ #===============================================================================
+ # Setup Project
+ #===============================================================================
+@@ -36,8 +29,6 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR OR LIBCXX_STANDALONE_BUIL
+   set(PACKAGE_STRING "${PACKAGE_NAME} ${PACKAGE_VERSION}")
+   set(PACKAGE_BUGREPORT "llvm-bugs@lists.llvm.org")
+ 
+-  # Find the LLVM sources and simulate LLVM CMake options.
+-  include(HandleOutOfTreeLLVM)
+ endif()
+ 
+ if (LIBCXX_STANDALONE_BUILD)

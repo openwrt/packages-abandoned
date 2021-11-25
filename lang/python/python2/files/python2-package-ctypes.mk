@@ -11,6 +11,8 @@ $(call Package/python2/Default)
   DEPENDS:=+python2-light
 endef
 
+TARGET_LDFLAGS+=-L$(STAGING_DIR)/usr/lib -L$(STAGING_DIR)/lib
+
 $(eval $(call Py2BasePackage,python2-ctypes, \
 	/usr/lib/python$(PYTHON2_VERSION)/ctypes \
 	/usr/lib/python$(PYTHON2_VERSION)/lib-dynload/_ctypes.so \
